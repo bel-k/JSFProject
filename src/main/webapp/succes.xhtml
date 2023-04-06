@@ -1,19 +1,49 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 <h:head>
-   <title>Facelet Title</title>
+    <title>Facelet Title</title>
 
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
 </h:head>
 <h:body>
-   welcome #{login_bean.nom }  #{login_bean.prenom }
-   <h:form>
-      <h:commandButton action="#{login_bean.doLogout()}" value="logout"  class="btn btn-primary"></h:commandButton>
+    <!--   welcome #{login_bean.nom }  #{login_bean.prenom }-->
+    <!--   <h:form>-->
+    <!--      <h:commandButton action="#{login_bean.doLogout()}" value="logout"  class="btn btn-primary"></h:commandButton>-->
 
-   </h:form>
+    <!--   </h:form>-->
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
 
+                            <div class="mb-md-5 mt-md-4 pb-5">
+
+
+                                <p class="text-white-50 mb-5">choose an option!</p>
+
+                                <div class="form-outline form-white mb-4">
+                                    <h:outputText value="Welcome #{sessionScope.username}" />
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <h:commandButton action="#{login_bean.doLogout()}" value="logout"
+                                                     class="btn btn-outline-light btn-lg px-5"></h:commandButton>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 </h:body>

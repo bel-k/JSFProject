@@ -10,46 +10,58 @@
     <style type="text/css">
         .custom-card {
             height: 500px;
+
+        }
+
+        .header.card {
+            height: 100px;
         }
     </style>
 </h:head>
 <h:body>
-    <div class="card bg-dark text-white col-md-8 offset-2  custom-card">
+    <div class="container py-8     ">
+        <div class="card">
+            <div class="card-header">
+            </div>
+        </div>
+        <div class="card bg-dark text-white col-md-8 offset-2 " style="border-radius: 1rem; ">
 
-        <div class="card-header text-center bg-dark text-light"> se connecter</div>
-        <div class="card-body">
-            <div class="container py-8 h-200">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="card-body p-5 text-center">
-                        <h:form>
-                            <div class="form-group">
-                                <h:outputLabel value="email"/>
-                                <h:inputText value="#{login_bean.email}" required="true" id="email"
-                                             requiredMessage="Entrer votre email" class="form-control"></h:inputText>
-                                <h:message for="email" styleClass="error"/>
-                            </div>
-                            <div class="form-group">
-                                <h:outputLabel value="password"/>
-                                <h:inputSecret value="#{login_bean.password}" required="true" id="password"
-                                               requiredMessage="Entrer votre mot de pass "
-                                               class="form-control"></h:inputSecret>
-                                <h:message for="password" styleClass="error"/>
-                            </div>
-                            <div>
-                                <h:messages/>
-                            </div>
+            <div class="card-header text-center bg-dark text-light header.card"> se connecter</div>
+            <div class="card-body   custom-card">
+                <div class="container py-8 h-200   ">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="card-body p-5 text-center">
+                            <h:form>
+                                <div class="form-group">
+                                    <h:outputLabel value="email"/>
+                                    <h:inputText value="#{login_bean.email}" required="true" id="email"
+                                                 requiredMessage="Entrer votre email"
+                                                 class="form-control"></h:inputText>
+                                    <h:message for="email" styleClass="error"/>
+                                </div>
+                                <div class="form-group">
+                                    <h:outputLabel value="password"/>
+                                    <h:inputSecret value="#{login_bean.password}" required="true" id="password"
+                                                   requiredMessage="Entrer votre mot de pass "
+                                                   class="form-control"></h:inputSecret>
+                                    <h:message for="password" styleClass="error"/>
+                                </div>
+                                <div>
+                                    <h:messages/>
+                                </div>
 
-                            <div>
-                                <h:commandButton class="btn btn-light btn-lg px-5"
-                                                 action="#{login_bean.logging()}" value="Se connecte"></h:commandButton>
-                            </div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </h:form>
+                                <div>
+                                    <h:commandButton class="btn btn-outline-light btn-lg px-5"
+                                                     action="#{login_bean.logging()}"
+                                                     value="Se connecte"></h:commandButton>
+                                </div>
+                            </h:form>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="card-footer">
         </div>
     </div>
 </h:body>

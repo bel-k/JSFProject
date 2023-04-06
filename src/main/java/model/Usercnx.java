@@ -1,8 +1,7 @@
 package model;
 
+import org.hibernate.*;
 import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import javax.faces.application.FacesMessage;
@@ -157,7 +156,10 @@ public class Usercnx implements Serializable {
             query.setString("password", password);
             List list = query.list();
             if (list.size() == 1) {
-                return "succes.xhtml";
+                String userName=getUsernameFromEmail(email);
+                System.out.println(userName);
+                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("username", userName);
+                return "suc.xhtml?faces-redirect=true";
 
             } else {
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Invalid login or password"));
@@ -170,6 +172,27 @@ public class Usercnx implements Serializable {
         }
         return "index.xhtml";
     }
+    public String getUsernameFromEmail(String email) {
+        String hql = "SELECT nom  FROM Usercnx   WHERE  email = :email";
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        String username = null;
+        try {
+            tx = session.beginTransaction();
+            Query query = session.createQuery(hql);
+            query.setParameter("email", email);
+            username = (String) query.uniqueResult();
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return username;
+    }
+
     public String addUser() {
         try {
             SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();

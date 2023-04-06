@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <style type="text/css">
+        .custom-card {
+            height: 500px;
+
+        }
+
+        .header.card {
+            height: 100px;
+        }
+    </style>
+</h:head>
+<h:body>
+
+
+    <div class="container py-8     ">
+        <div class="card">
+            <div class="card-header">
+            </div>
+        </div>
+        <div class="card bg-dark text-white col-md-8 offset-2 " style="border-radius: 1rem; ">
+
+            <div class="card-header text-center bg-dark text-light header.card"> se connecter</div>
+            <div class="card-body   custom-card">
+                <div class="container py-8 h-200   ">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="card-body p-5 text-center">
+
+                            <h:outputText value="Welcome #{sessionScope.username}"/>
+                            <h:commandButton  action="#{login_bean.doLogout()}"  value="logout"
+                                             class="btn btn-outline-light btn-lg px-5"></h:commandButton>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+        </div>
+    </div>
+</h:body>
+</html>
