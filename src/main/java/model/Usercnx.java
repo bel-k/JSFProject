@@ -159,7 +159,7 @@ public class Usercnx implements Serializable {
                 String userName=getUsernameFromEmail(email);
                 System.out.println(userName);
                 FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("username", userName);
-                return "suc.xhtml?faces-redirect=true";
+                return "succes.xhtml?faces-redirect=true";
 
             } else {
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Invalid login or password"));
