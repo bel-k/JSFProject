@@ -8,11 +8,40 @@
 
 </h:head>
 <h:body>
-   <div  class="card col-md-8 offset-2">
-   <div class="card-body">
-   <h:outputLink value="login.xhtml">Login</h:outputLink><br></br>
-   <h:outputLink value="register.xhtml">Register</h:outputLink>
-   </div>
-   </div>
+<!--   <div  class="card col-md-8 offset-2">-->
+<!--   <div class="card-body">-->
+<!--   <h:outputLink value="login.xhtml">Login</h:outputLink><br></br>-->
+<!--   <h:outputLink value="register.xhtml">Register</h:outputLink>-->
+<!--   </div>-->
+<!--   </div>-->
+   <section class="vh-100 gradient-custom">
+      <div class="container py-5 h-100">
+         <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+               <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                  <div class="card-body p-5 text-center">
+
+                     <div class="mb-md-5 mt-md-4 pb-5">
+
+
+                        <p class="text-white-50 mb-5">choose an option!</p>
+
+                        <div class="form-outline form-white mb-4">
+                           <h:outputLink class="btn btn-outline-light btn-lg px-5"  value="login.xhtml">sign in</h:outputLink>
+                        </div>
+
+                        <div class="form-outline form-white mb-4">
+                           <h:outputLink class="btn btn-outline-light btn-lg px-5"  value="register.xhtml">sign up</h:outputLink>
+                        </div>
+                     </div>
+
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
 </h:body>
 </html>
+
