@@ -1,35 +1,56 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
 <h:head>
-   <title>Home</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-
-
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <style type="text/css">
+        .custom-card {
+            height: 500px;
+        }
+    </style>
 </h:head>
 <h:body>
-    <div  class="card col-md-8 offset-2">
-    <div class="card-header text-center bg-dark text-light"> se connecter</div>
-    <div class="card-body">
-    <h:form>
-        <div class="form-group">
-            <h:outputLabel value="email"/>
-            <h:inputText value="#{login_bean.email}" required="true" id="email" requiredMessage="Entrer votre email" class="form-control"></h:inputText>
-            <h:message for="email" styleClass="error" />
+    <div class="card bg-dark text-white col-md-8 offset-2  custom-card">
+
+        <div class="card-header text-center bg-dark text-light"> se connecter</div>
+        <div class="card-body">
+            <div class="container py-8 h-200">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="card-body p-5 text-center">
+                        <h:form>
+                            <div class="form-group">
+                                <h:outputLabel value="email"/>
+                                <h:inputText value="#{login_bean.email}" required="true" id="email"
+                                             requiredMessage="Entrer votre email" class="form-control"></h:inputText>
+                                <h:message for="email" styleClass="error"/>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel value="password"/>
+                                <h:inputSecret value="#{login_bean.password}" required="true" id="password"
+                                               requiredMessage="Entrer votre mot de pass "
+                                               class="form-control"></h:inputSecret>
+                                <h:message for="password" styleClass="error"/>
+                            </div>
+                            <div>
+                                <h:messages/>
+                            </div>
+
+                            <div>
+                                <h:commandButton class="btn btn-light btn-lg px-5"
+                                                 action="#{login_bean.logging()}" value="Se connecte"></h:commandButton>
+                            </div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-
-            <h:outputLabel value="password"/>
-            <h:inputSecret value="#{login_bean.password}" required="true" id="password" requiredMessage="Entrer votre mot de pass " class="form-control"></h:inputSecret>
-            <h:message for="password" styleClass="error" />
-        </div>
-            <h:commandButton action="#{login_bean.logging()}" value="Se connecte" class="btn btn-primary"></h:commandButton>
-
-
-
-    </h:form>
-    </div>
     </div>
 </h:body>
 </html>

@@ -160,10 +160,11 @@ public class Usercnx implements Serializable {
                 return "succes.xhtml";
 
             } else {
-                FacesContext context = FacesContext.getCurrentInstance();
-                context.addMessage(null, new FacesMessage("Invalid email/password"));
-                return "index.xhtml";
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Invalid login or password"));
+                // return null to stay on the same page
+                return null;
             }
+
         } catch (Exception e) {
             System.out.println(e);
         }
