@@ -204,12 +204,13 @@ public class Usercnx implements Serializable {
                 return "registerSucces.xhtml";
             }
             else {
-                FacesMessage errorMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Email already existe");
-
+                //FacesMessage errorMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Email already existe");
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Email already existe"));
                 // Add the error message to the FacesContext
-                FacesContext facesContext = FacesContext.getCurrentInstance();
-                facesContext.addMessage(null, errorMessage);
-                return "ErroPage.xhtml";
+              //  FacesContext facesContext = FacesContext.getCurrentInstance();
+               // facesContext.addMessage(null, errorMessage);
+             //   return "ErroPage.xhtml";
+                return  null;
 
             }
         }

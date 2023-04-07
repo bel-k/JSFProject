@@ -71,8 +71,10 @@
     <div class="card bg-dark text-white col-md-8 offset-2 " style="border-radius: 1rem; ">
         <div class="card-header text-center bg-dark text-light"> Welcome</div>
         <div class="card-body">
+            <div>
 
-            <h:outputText value=" #{login_bean.username}" />
+            <h:outputText value=" #{login_bean.nom}" />
+            </div>
             <div>
                 <h:form>
                     <h:commandButton class="btn btn-outline-light btn-lg px-5" value="Logout"
