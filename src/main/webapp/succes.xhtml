@@ -52,12 +52,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
-    <title>Success Page</title>
+    <title>succes page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <style type="text/css">
+        .required-label:after {
+            content: " *";
+            color: red;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+    </style>
 </h:head>
 <h:body>
-    <h2>Welcome #{login_bean.nom}!</h2>
-    <h:form>
-        <h:commandButton value="Logout" action="#{login_bean.doLogout}" />
-    </h:form>
+    <div class="card bg-dark text-white col-md-8 offset-2 " style="border-radius: 1rem; ">
+        <div class="card-header text-center bg-dark text-light"> Welcome</div>
+        <div class="card-body">
+
+            <h:outputText value=" #{login_bean.username}" />
+            <div>
+                <h:form>
+                    <h:commandButton class="btn btn-outline-light btn-lg px-5" value="Logout"
+                                     action="#{login_bean.doLogout}"/>
+                </h:form>
+            </div>
+        </div>
+    </div>
 </h:body>
 </html>
